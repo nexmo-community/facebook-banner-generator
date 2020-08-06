@@ -1,0 +1,40 @@
+<h1 id="facebook-messenger-banner-generator-chatbot">Facebook Messenger Banner Generator Chatbot</h1>
+<p><a href="CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg" alt="Contributor Covenant"></a>
+<a href="./LICENSE.txt"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT licensed"></a></p>
+<p><img src="https://developer.nexmo.com/assets/images/Vonage_Nexmo.svg" height="48px" alt="Nexmo is now known as Vonage" /></p>
+<p>This is a fully working Facebook Messenger Chatbot that allows users to create banner images with custom text and randomly selected colors.</p>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#installation-and-usage">Installation and Usage</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>In order to use this application you need to have:</p>
+<ul>
+<li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+<li><a href="https://sidekiq.org/">Sidekiq</a></li>
+<li><a href="https://dashboard.nexmo.com/sign-up?utm_source=DEV_REL&amp;utm_medium=github&amp;utm_campaign=facebook-banner-generator">Vonage API Account</a></li>
+<li><a href="https://www.facebook.com">Facebook</a></li>
+</ul>
+<h2 id="installation-and-usage">Installation and Usage</h2>
+<p>To install and use this application:</p>
+<ul>
+<li>Clone the <a href="https://github.com/Nexmo-community/facebook-banner-generator">repository</a></li>
+<li>Rename the <code>.env.sample</code> file to <code>.env</code></li>
+<li>Fill in your Nexmo application ID in the <code>.env</code> file</li>
+<li>Fill in your Facebook page ID in the <code>.env</code> file</li>
+<li>After creating your Nexmo/Vonage application, make sure to save the <code>private.key</code> file in the root folder of your application.</li>
+<li>Run <code>bundle install</code> and <code>rake db:migrate</code> to initialize your Rails application</li>
+<li>Make sure <code>Spring</code> is disabled, you can do that by adding the environment variable when starting the server as seen in the next step</li>
+<li>Start your Rails server with <code>DISABLE_SPRING=true bundle exec rails start</code></li>
+<li>Start Sidekiq separately with <code>DISABLE_SPRING=true bundle exec sidekiq</code></li>
+<li>Make sure your Rails server is externally available. (<a href="https://developer.nexmo.com/concepts/guides/testing-with-ngrok">Using ngrok</a> is a great way to do that in development)</li>
+<li>Provide your externally available webhook status and inbound URLs (<code>#{YOUR_URL}/webhooks/message</code> and <code>#{YOUR_URL}/webhooks.status</code>) to your <a href="https://dashboard.nexmo.com">Nexmo Application</a> so you can receive incoming Facebook chat messages</li>
+<li>Link your Nexmo Application to your Facebook Page (See <a href="https://developer.nexmo.com/messages/concepts/facebook">this guide</a> on how to do that)</li>
+<li>Send a message to your Facebook page and the bot will direct you from there</li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>We ❤️ contributions from everyone! <a href="https://github.com/Nexmo-community/facebook-banner-generator/issues">Bug reports</a>, <a href="https://github.com/Nexmo/facebook-banner-generator/pulls">bug fixes</a> and feedback on the library is always appreciated. Look at the <a href="https://github.com/Nexmo/facebook-banner-generator/blob/master/CONTRIBUTING.md">Contributor Guidelines</a> for more information and please follow the <a href="https://guides.github.com/introduction/flow/index.html">GitHub Flow</a>.</p>
+<h2 id="license">License</h2>
+<p>This project is under the <a href="https://github.com/Nexmo/facebook-banner-generator/blob/master/LICENSE.txt">MIT LICENSE</a>.</p>

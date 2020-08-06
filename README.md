@@ -7,6 +7,8 @@
 
 This repository contains the code for a working Facebook Messenger Chatbot that allows users to create banner images with custom text and randomly selected colors.
 
+<div style="text-align:center"><img src="https://github.com/nexmo-community/facebook-banner-generator/blob/master/banner-generated.gif" /></div>
+
 * [Prerequisites](#prerequisites)
 * [Installation and Usage](#installation-and-usage)
 * [Contributing](#contributing)
